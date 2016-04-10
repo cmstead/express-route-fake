@@ -1,0 +1,24 @@
+{
+  "name": "express-route-fake",
+  "version": "0.1.0",
+  "description": "Module for faking express routes to enable easier testing",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cmstead/express-route-fake.git"
+  },
+  "keywords": [
+    "express",
+    "router",
+    "fake",
+    "testing",
+    "tdd"
+  ],
+  "author": "Chris Stead",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/cmstead/express-route-fake/issues"
+  },
+  "homepage": "https://github.com/cmstead/express-route-fake#readme"
+}
