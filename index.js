@@ -66,7 +66,11 @@ function renderCall (index){
 
 function expressFake (){
     return {
-        render: render
+        render: render,
+        delete: routeStub.bind(null, 'delete'),
+        get: routeStub.bind(null, 'get'),
+        post: routeStub.bind(null, 'post'),
+        put: routeStub.bind(null, 'put')
     };
 }
 

@@ -1,6 +1,6 @@
 {
   "name": "express-route-fake",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Module for faking express routes to enable easier testing",
   "main": "index.js",
   "scripts": {},
