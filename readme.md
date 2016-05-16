@@ -59,3 +59,30 @@ Testing a simple get action:
         
         assert(status === 200);
     });
+    
+## API
+
+*expressRouteFake()*
+
+- Returns object with render function attached
+- Render function captures all arguments passed per call
+
+*expressRouteFake.Router()*
+
+- Returns a fake router object
+- Attached functions are get, put, post, delete
+- All http verbs capture path and action function as key/value pair
+
+*expressRouteFake.reset()*
+
+- Resets expressRouteFake back to initial state
+
+*expressRouteFake.getRouteAction()*
+
+- Endpoint contract: expressRouteFake.getRouteAction(httpVerb:String, routePath:String): Function
+- Throws error if path does not exist for provided httpVerb
+
+*expressRouteFake.renderData.call()*
+
+- Endpoint contract: expressRouteFake.renderData.call(index:Int): Array
+- Returned array is an array of all arguments passed at indexed call

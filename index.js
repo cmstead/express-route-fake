@@ -7,6 +7,10 @@ var routeFunctions = {
     put: {}
 };
 
+var expressData = {
+    renderArgs: []
+};
+
 function routeStub(method, path, action) {
     routeFunctions[method][path] = action;
 }
@@ -38,6 +42,8 @@ function reset() {
     routeFunctions.get = {};
     routeFunctions.post = {};
     routeFunctions.put = {};
+    
+    expressData.renderArgs = [];
 }
 
 function Router() {
@@ -49,8 +55,28 @@ function Router() {
     };
 }
 
-module.exports = {
-    Router: Router,
-    getRouteAction: getRouteAction,
-    reset: reset
+function render (){
+    var args = Array.prototype.slice.call(arguments);
+    expressData.renderArgs.push(args);
+}
+
+function renderCall (index){
+    return expressData.renderArgs[index];
+}
+
+function expressFake (){
+    return {
+        render: render
+    };
+}
+
+expressFake.Router = Router;
+
+expressFake.reset = reset;
+expressFake.getRouteAction = getRouteAction;
+
+expressFake.renderData = {
+    call: renderCall
 };
+
+module.exports = expressFake;
